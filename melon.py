@@ -27,6 +27,21 @@ artist = soup.select('div.ellipsis.rank02 > span > a')
 # for a in artist:
 #     print(a.text)
 # 1위 - 100위까지 출력해보기
+rank = []   # 리스트 변수
+for i in range(1,101):
+    rank.append(i)
+print(rank)
+# 노래 제목 리스트 만들기
+tlist = []
+title = soup.select('div.ellipsis.rank02 > span > a')
+for r in title:
+    tlist.append(t.text)
+
+# 가수 리스트 만들기
+alist = []
+artist = soup.select('div.ellipsis.rank02 > span > a')
+for r in artist:
+    alist.append(t.text)
 for i in range(0, 100):
     # if artist[i].text == '임영웅': #특정 가수만 출력
     print(f'{i+1}위 {title[i].text} - {artist[i].text}')
