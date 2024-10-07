@@ -24,6 +24,9 @@ for t in title:
 # 가수 이름
 #lst50 > td:nth-child(6) > div > div > div.ellipsis.rank02 > a
 artist = soup.select('div.ellipsis.rank02 > span > a')
-for t in artist:
-    print(t.text)
-# 1위 - 50위까지 출력해보기
+# for a in artist:
+#     print(a.text)
+# 1위 - 100위까지 출력해보기
+for i in range(0, 100):
+    # if artist[i].text == '임영웅': #특정 가수만 출력
+    print(f'{i+1}위 {title[i].text} - {artist[i].text}')
