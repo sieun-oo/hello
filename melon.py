@@ -14,3 +14,16 @@ soup = BeautifulSoup(r.text, 'html.parser')
 fot i in range(1,11):
     title = soup.select_one(f'#const > div.chart > div > ul > li.on.nth1 > div > ul > li:nth-child(i) > div.rank_cntt > div.rank_info > p > a')
     printf(f'{i}위 {title.text}')
+
+# 노래 제목
+#lst50 > td:nth-child(6) > div > div > div.ellipsis.rank01 > span > a
+#lst50 > td:nth-child(6) > div > div > div.ellipsis.rank01 > span > a
+title = soup.select('div.ellipsis.rank01 > span > a')
+for t in title:
+    print(t.text)
+# 가수 이름
+#lst50 > td:nth-child(6) > div > div > div.ellipsis.rank02 > a
+artist = soup.select('div.ellipsis.rank02 > span > a')
+for t in artist:
+    print(t.text)
+# 1위 - 50위까지 출력해보기
